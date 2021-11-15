@@ -1,11 +1,15 @@
 <template>
   <nav class="navbar-expand-lg navbar navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">FreshPay Reconciliation App</a>
+      <router-link to="/" class="navbar-brand">
+        <a>FreshPay Reconciliation App</a>
+      </router-link>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" class="nav-link active">
+              <a aria-current="page">Home</a>
+            </router-link>
           </li>
         </ul>
       </div>

@@ -42,8 +42,8 @@ let computeVodacom = (output, switchData, telco, opsType) => {
 
             if (telco_transac !== undefined) {
 
-                if (telco_transac[4] === transactions[1] && telco_transac[2] === transactions[4] &&
-                    telco_transac[3] === transactions[2] && telco_transac[1] === transactions[3]) {
+                if (telco_transac[1] === transactions[1] && telco_transac[4] === transactions[4] &&
+                    telco_transac[2] === transactions[2] && telco_transac[3] === transactions[3]) {
                     if (transactions[1] === "debit") {
                         if (transactions[4] === "CDF") {
                             output.global_amount_cdf_debit += parseFloat(transactions[2])
@@ -83,25 +83,25 @@ let computeVodacom = (output, switchData, telco, opsType) => {
 
 
             if (transactions !== undefined) {
-                if (telco_transactions[4] === transactions[1] && telco_transactions[2] === transactions[4] &&
-                    telco_transactions[3] === transactions[2] && telco_transactions[1] === transactions[3]) {
-                    if (telco_transactions[4] === "debit") {
-                        if (telco_transactions[2] === "CDF") {
-                            output.global_amount_cdf_debit += parseFloat(telco_transactions[3])
+                if (telco_transactions[1] === transactions[1] && telco_transactions[4] === transactions[4] &&
+                    telco_transactions[2] === transactions[2] && telco_transactions[3] === transactions[3]) {
+                    if (telco_transactions[1] === "debit") {
+                        if (telco_transactions[4] === "CDF") {
+                            output.global_amount_cdf_debit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
-                        else if (telco_transactions[2] === "USD") {
-                            output.global_amount_usd_debit += parseFloat(telco_transactions[3])
+                        else if (telco_transactions[4] === "USD") {
+                            output.global_amount_usd_debit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                     }
-                    else if (telco_transactions[4] === "credit") {
-                        if (telco_transactions[2] === "CDF") {
-                            output.global_amount_cdf_credit += parseFloat(telco_transactions[3])
+                    else if (telco_transactions[1] === "credit") {
+                        if (telco_transactions[4] === "CDF") {
+                            output.global_amount_cdf_credit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
-                        else if (telco_transactions[2] === "USD") {
-                            output.global_amount_usd_credit += parseFloat(telco_transactions[3])
+                        else if (telco_transactions[4] === "USD") {
+                            output.global_amount_usd_credit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                     }
@@ -127,8 +127,8 @@ let computeOrange = (output, switchData, telco, opsType) => {
 
             if (telco_transac !== undefined) {
 
-                if (telco_transac[2] === transactions[1] && telco_transac[4] === transactions[4] &&
-                    telco_transac[3] === transactions[2] && telco_transac[1] === transactions[3]) {
+                if (telco_transac[1] === transactions[1] && telco_transac[4] === transactions[4] &&
+                    telco_transac[2] === transactions[2] && telco_transac[3] === transactions[3]) {
                     if (transactions[1] === "debit") {
                         if (transactions[4] === "CDF") {
                             output.global_amount_cdf_debit += parseFloat(transactions[2])
@@ -167,25 +167,25 @@ let computeOrange = (output, switchData, telco, opsType) => {
             let transactions = switchData.find(el => el[0] === telco_transactions[0])
 
             if (transactions !== undefined) {
-                if (telco_transactions[2] === transactions[1] && telco_transactions[4] === transactions[4] &&
-                    telco_transactions[3] === transactions[2] && telco_transactions[1] === transactions[3]) {
-                    if (telco_transactions[2] === "debit") {
+                if (telco_transactions[1] === transactions[1] && telco_transactions[4] === transactions[4] &&
+                    telco_transactions[2] === transactions[2] && telco_transactions[3] === transactions[3]) {
+                    if (telco_transactions[1] === "debit") {
                         if (telco_transactions[4] === "CDF") {
-                            output.global_amount_cdf_debit += parseFloat(telco_transactions[3])
+                            output.global_amount_cdf_debit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                         else if (telco_transactions[4] === "USD") {
-                            output.global_amount_usd_debit += parseFloat(telco_transactions[3])
+                            output.global_amount_usd_debit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                     }
-                    else if (telco_transactions[2] === "credit") {
+                    else if (telco_transactions[1] === "credit") {
                         if (telco_transactions[4] === "CDF") {
-                            output.global_amount_cdf_credit += parseFloat(telco_transactions[3])
+                            output.global_amount_cdf_credit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                         else if (telco_transactions[4] === "USD") {
-                            output.global_amount_usd_credit += parseFloat(telco_transactions[3])
+                            output.global_amount_usd_credit += parseFloat(telco_transactions[2])
                             output.checked_transactions += 1
                         }
                     }
