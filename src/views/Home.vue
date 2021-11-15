@@ -67,7 +67,7 @@
         </div>&nbsp; Produce Report
       </button>
       <button class="btn btn-success" type="button" @click="download">
-        <svg-icon type="mdi" :path="mdiDownload"></svg-icon>Download Report
+        <svg-icon type="mdi" :path="mdiDownload"></svg-icon> &nbsp; Download Report
       </button>
     </div>
   </div>
