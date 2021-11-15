@@ -40,15 +40,10 @@
       </div>
     </div>
   </div>
-  <div class="row mx-auto">
-    <div class="col">
-      <div class="alert alert-success" role="alert">Report produced succesfully, please download</div>
-    </div>
-  </div>
   <div class="row mx-auto mb-3">
     <div class="col-3">
       <div class="form-check">
-        <input class="form-check-input" value="1" @change="updateRadio" type="radio" name="ops"/>
+        <input class="form-check-input" value="1" @change="updateRadio" type="radio" name="ops" />
         <label class="form-check-label">Check Switch to Telco</label>
       </div>
     </div>
@@ -57,6 +52,11 @@
         <input class="form-check-input" value="2" @change="updateRadio" type="radio" name="ops" />
         <label class="form-check-label">Check Telco to Switch</label>
       </div>
+    </div>
+  </div>
+  <div class="row mx-auto">
+    <div class="col">
+      <div class="alert alert-success" role="alert">Report produced succesfully, please download</div>
     </div>
   </div>
   <div class="row mx-auto">
@@ -100,7 +100,7 @@ function upload(file, event) {
   })
 }
 
-function updateRadio(event){
+function updateRadio(event) {
   ops_type.value = event.target.value;
 }
 
