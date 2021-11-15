@@ -91,7 +91,6 @@ let report_data = [];
 function upload(file, event) {
   let temp = event.target.files[0];
   readXlsxFile(temp).then((rows) => {
-    console.log(rows);
     if (file === 'Telco') {
       telco_file = rows;
     }
