@@ -5,7 +5,6 @@
         @change="update"
         v-model="telcoid"
         class="form-select"
-        aria-label="Default select example"
       >
         <option value="0" selected>Choose a telco operator</option>
         <option value="1">Airtel</option>
@@ -22,7 +21,6 @@
           @change="upload('Switch', $event)"
           class="form-control"
           type="file"
-          id="paydrc"
           accept=".xlsx, .xls, application/msexcel"
         />
       </div>
@@ -34,7 +32,6 @@
           @change="upload('Telco', $event)"
           class="form-control"
           type="file"
-          id="telco"
           accept=".xlsx, .xls, application/msexcel"
         />
       </div>
@@ -56,7 +53,7 @@
   </div>
   <div class="row mx-auto" v-if="alert">
     <div class="col">
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
         {{ message }}
         <button
           type="button"
