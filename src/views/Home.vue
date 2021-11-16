@@ -168,7 +168,7 @@ function download() {
       if(Array.isArray(item)){
         let arrayString = "";
         item.forEach(transac => {
-          arrayString += Object.values(transac).join(",");
+          arrayString += Object.values(transac).join(",")+" ";
         })
         return arrayString;
       }
